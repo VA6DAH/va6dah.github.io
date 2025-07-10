@@ -73,7 +73,7 @@
 
     <div id="terminal" class="terminal w-full max-w-4xl mx-auto">
         <div class="border-b-2 pb-2 mb-4 text-center" style="border-color: inherit;">
-            <p>DAKOTA HOURIE -- SYSTEM.FAILURE -- [SESSION_ID: 69420]</p>
+            <p>ELECT DAKOTA HOURIE FOR BATTLERIVER-CROWFOOT-- SYSTEM.FAILURE -- [SESSION_ID: 69420]</p>
         </div>
         <div id="terminal-body" class="text-lg md:text-xl break-words">
             <!-- Content will be typed here by JavaScript -->
@@ -97,34 +97,46 @@
         const typedTextElement = document.getElementById('typed-text');
         const inputLine = document.getElementById('input-line');
 
-        const asciiArt = [
-            "      .--.          ",
-            "     |o_o |         ",
-            "     |:_/ |         ",
-            "    //   \\ \\      ",
-            "   (|     | )       ",
-            "  /'\\_   _/`\\     ",
-            "  \\___)=(___/      "
+const asciiArt = [
+            "      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣿⣿⡿⠟⠋⣉⣤⣤⣤⣶⣶⣶⣶⣶⣤⣤⣄⣀⡉⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣿⠟⢀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣄⡘⠻⣿⣿⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⡿⠃⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣿⣿⣿⣦⣈⠻⣿⣿⣿⣿⣿",
+            "      ⣿⣿⡿⠁⣸⣿⣿⣿⢻⣿⠏⣿⣿⣿⣿⣿⣿⣿⣿⣦⡉⢡⣿⣿⣿⣿⣿⣿⣧⡙⣿⣿⣿⣿",
+            "      ⣿⣿⡇⢀⣿⣿⣿⣿⡯⡡⣾⣿⣿⣿⣿⣿⣿⣿⣿⠟⣰⣷⣭⣿⣿⣿⣿⣿⣿⣧⠈⢿⣿⣿",
+            "      ⣿⣿⠀⣼⣿⣿⣿⣟⣰⣷⣌⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠈⣿⣿",
+            "      ⣿⡇⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⢠⣿⣿⣿⡆⢹⣿",
+            "      ⣿⠁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣸⣿⣿⣿⡇⢸⣿",
+            "      ⣿⡀⣿⣿⣫⡁⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⣿⣿⣿⣿⡧⢸⣿",
+            "      ⣿⠀⣿⣿⣿⣧⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠸⢿⣿⣿⣿⡇⣸⣿",
+            "      ⣿⡄⢻⣿⣿⣿⣷⣝⡛⠛⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⣤⡛⢦⣸⣿⡟⢀⣿⣿",
+            "      ⣿⣧⠘⣿⣿⣿⣿⣿⣿⣿⣷⣄⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⣼⣮⡻⠿⢣⡟⢀⣼⣿⣿",
+            "      ⣿⣿⣦⡈⠿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣍⣙⣛⣛⣫⣤⣶⣶⣶⣿⣿⣿⣿⣷⠟⣠⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣦⠙⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⣼⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣿⣷⣦⣬⣉⠛⠛⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣩⣴⣿⣿⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣤⣤⣤⣀⣀⣀⣀⣀⣀⣠⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
+            "      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
         ];
         
         const linesToType = [
             { text: "BOOTING DH_OPERATING_SYSTEM...", speed: 50 },
-            { text: "KERNEL_PANIC_LEVEL: FABULOUS", speed: 50 },
+            { text: "KERNEL_PANIC_LEVEL: UNGOVERNABLE", speed: 50 },
             { text: "...", speed: 500 },
             { text: "LOADING CAMPAIGN_MANIFESTO.TXT", speed: 50 },
             { text: "----------------------------------", speed: 20 },
             { text: "CANDIDATE: Dakota Hourie", speed: 40 },
             { text: "STATUS: Independent, Unpredictable", speed: 40 },
             { text: "ALIGNMENT: Longest Ballot Committee (for the chaos)", speed: 40 },
-            { text: "PRIMARY_DIRECTIVE: INJECT_GLITTER.EXE", speed: 40 },
+            { text: "PRIMARY_DIRECTIVE: DEPLOY_ANOMALY.EXE", speed: 40 },
             { text: "----------------------------------", speed: 20 },
             { text: " ", speed: 10 },
             { text: "RUNNING PLATFORM.SH:", speed: 50 },
             { text: " ", speed: 10 },
-            { text: ">> 1. MANDATE RAINBOWS. All public infrastructure must adhere to a strict 7-color gradient. No exceptions.", speed: 30 },
-            { text: ">> 2. REPLACE DEBATES. All political discourse will now be settled via high-stakes vogueing battles.", speed: 30 },
-            { text: ">> 3. NATIONALIZE GLITTER. It is a strategic resource. It belongs to the people.", speed: 30 },
-            { text: ">> 4. APPOINT A GOOSE. A goose will be given a cabinet position with full veto power. For the drama.", speed: 30 },
+            { text: ">> 1. DECOMMISSION HOSTILE ARCHITECTURE. All anti-homeless spikes and hostile benches will be replaced with plush, mismatched, donated couches.", speed: 30 },
+            { text: ">> 2. POLICY BY ZINE. All new legislation must be submitted as a hand-copied, collaged zine. Official distribution means leaving it in a coffee shop.", speed: 30 },
+            { text: ">> 3. ESTABLISH A NATIONAL LIBRARY OF THINGS. Borrow power tools, sewing machines, and unicycles. Ownership is a burden.", speed: 30 },
+            { text: ">> 4. APPOINT A MOOSE. A moose will be given a cabinet position with full veto power. For the drama.", speed: 30 },
             { text: ">> 5. LEGALIZE CHAOS. My entire platform is to make things more confusing, beautiful, and weird.", speed: 30 },
             { text: " ", speed: 10 },
             { text: "LOADING ABOUT_ME.JPG...", speed: 50 },
