@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakota Hourie | Flat, Fabulous, & Unflappable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes rainbow-bg-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .rainbow-bg {
+            background: linear-gradient(270deg, #f09, #ff7e00, #ffea00, #0f0, #00f, #a0f, #f09);
+            background-size: 1400% 1400%;
+            animation: rainbow-bg-animation 20s ease infinite;
+        }
+        .flat-button {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .flat-button:hover:not(:disabled) {
+            transform: translateY(-4px);
+        }
+        .flat-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .section-title {
+            font-weight: 800; /* Extra bold for titles */
+            letter-spacing: -0.025em;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-gray-900">DAKOTA HOURIE</a>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold tracking-wider">
+                <a href="#about" class="text-gray-500 hover:text-black">ABOUT</a>
+                <a href="#platform" class="text-gray-500 hover:text-black">PLATFORM</a>
+                <a href="#join" class="text-gray-500 hover:text-black">JOIN</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <a href="#about" class="block py-3 px-6 text-sm hover:bg-gray-50">ABOUT</a>
+            <a href="#platform" class="block py-3 px-6 text-sm hover:bg-gray-50">PLATFORM</a>
+            <a href="#join" class="block py-3 px-6 text-sm hover:bg-gray-50">JOIN</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="rainbow-bg pt-32 pb-24 md:pt-48 md:pb-40">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-8xl font-extrabold text-white leading-tight tracking-tighter" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                    A VOTE FOR CHAOS
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl text-white max-w-2xl mx-auto" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+                    It's time for a candidate who is unqualified, unpredictable, and undeniably fabulous.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto text-center mb-16">
+                    <h2 class="section-title text-4xl md:text-5xl text-gray-900">HI, IT'S ME.</h2>
+                    <p class="mt-4 text-lg text-gray-600">The political system is a joke, so why not vote for a clown?</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="bg-yellow-300 p-2 rounded-lg">
+                        <div class="bg-pink-300 h-80 rounded-md flex items-center justify-center">
+                           <span class="text-white text-3xl font-bold">This is a picture of me.</span>
+                        </div>
+                    </div>
+                    <div class="text-gray-700 space-y-4 text-lg">
+                        <p>I'm Dakota Hourie. My platform is simple: make everything more colorful and confusing. I believe in the power of glitter to solve most problems and the importance of a ridiculously long ballot.</p>
+                        <p>Running as an independent means I'm not tied to any party's boring color scheme. I'm aligned with the <span class="font-bold text-purple-600">Longest Ballot Committee</span> because their name is hilarious and their goal of letting citizens decide election laws is just chaotic enough to work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Platform Section -->
+        <section id="platform" class="py-20 md:py-28 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto text-center mb-16">
+                    <h2 class="section-title text-4xl md:text-5xl text-gray-900">THE AGENDA.</h2>
+                    <p class="mt-4 text-lg text-gray-600">A 3-step plan to make politics bearable.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-lg">
+                        <div class="w-20 h-20 mx-auto bg-cyan-400 rounded-full flex items-center justify-center text-white text-3xl font-bold">1</div>
+                        <h3 class="text-2xl font-bold mt-6">More Color</h3>
+                        <p class="mt-2 text-gray-600">Mandate that all government buildings be painted in vibrant, clashing colors. Drab gray is hereby outlawed.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-lg">
+                        <div class="w-20 h-20 mx-auto bg-orange-400 rounded-full flex items-center justify-center text-white text-3xl font-bold">2</div>
+                        <h3 class="text-2xl font-bold mt-6">Less Sense</h3>
+                        <p class="mt-2 text-gray-600">Replace boring political debates with high-energy karaoke competitions. Let's see who can really deliver.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-lg">
+                        <div class="w-20 h-20 mx-auto bg-fuchsia-500 rounded-full flex items-center justify-center text-white text-3xl font-bold">3</div>
+                        <h3 class="text-2xl font-bold mt-6">Total Confusion</h3>
+                        <p class="mt-2 text-gray-600">Ensure every decision leads to maximum delightful chaos. If nobody understands what's happening, my job is done.</p>
+                    </div>
+                </div>
+
+                <!-- Gemini API Feature Section -->
+                <div class="mt-20 max-w-2xl mx-auto text-center">
+                    <h3 class="section-title text-3xl md:text-4xl text-gray-900">✨ Our Dynamic Platform ✨</h3>
+                    <p class="mt-4 text-lg text-gray-600">Our policies are generated by a highly advanced (and very confused) AI. What will I promise next? Who knows!</p>
+                    
+                    <div class="mt-6 bg-white p-6 rounded-lg min-h-[100px] flex items-center justify-center shadow-inner">
+                        <p id="promise-text" class="text-xl text-gray-700 font-semibold italic">"I promise to replace the national anthem with a sick synth-pop beat."</p>
+                    </div>
+                
+                    <button id="generate-promise-btn" class="mt-6 flat-button w-full sm:w-auto rainbow-bg text-white font-bold py-4 px-10 rounded-lg text-lg">
+                        GENERATE A NEW PROMISE
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Section -->
+        <section id="join" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-4xl md:text-5xl text-gray-900">GET INVOLVED.</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">This glorious mess won't make itself. We need your questionable judgment.</p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="flat-button w-full sm:w-auto rainbow-bg text-white font-bold py-4 px-10 rounded-lg text-lg">
+                        DONATE TO THE GLITTER FUND
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="flat-button w-full sm:w-auto bg-gray-800 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-black">
+                        JOIN THE CHAOS CREW
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto py-10 px-6 text-center text-gray-400 text-sm">
+            <p>Paid for by someone. Probably.</p>
+            <p class="mt-2">&copy; 2025 Dakota Hourie's Campaign of Questionable Choices.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Gemini API Feature: Dynamic Promise Generator ---
+        const generateBtn = document.getElementById('generate-promise-btn');
+        const promiseText = document.getElementById('promise-text');
+
+        generateBtn.addEventListener('click', async () => {
+            promiseText.textContent = 'Consulting the chaos oracles...';
+            generateBtn.disabled = true;
+            
+            const prompt = "Generate a single, funny, absurd, and chaotic campaign promise for a joke political candidate named Dakota Hourie who wants to make politics more fabulous and confusing. The promise should be a short sentence and enclosed in quotation marks.";
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    // Clean up the text, remove markdown quotes or leading/trailing whitespace
+                    promiseText.textContent = text.trim().replace(/^"|"$/g, ''); 
+                } else {
+                    // Handle cases where the response structure is unexpected
+                    throw new Error("Unexpected API response structure.");
+                }
+
+            } catch (error) {
+                console.error("Error generating promise:", error);
+                promiseText.textContent = 'The AI is on a glitter break. Try again later!';
+            } finally {
+                generateBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
