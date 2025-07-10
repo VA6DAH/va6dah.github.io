@@ -1,232 +1,186 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dakota Hourie | Flat, Fabulous, & Unflappable</title>
+    <title>DAKOTA HOURIE - SYSTEM.FAILURE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'VT323', monospace;
+            background-color: #000;
+            color: #00ff41;
+            text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
         }
-        @keyframes rainbow-bg-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes rainbow-glow {
+            0% { border-color: #ff00de; box-shadow: 0 0 10px #ff00de; }
+            16% { border-color: #7200ff; box-shadow: 0 0 10px #7200ff; }
+            32% { border-color: #007bff; box-shadow: 0 0 10px #007bff; }
+            48% { border-color: #00ff41; box-shadow: 0 0 10px #00ff41; }
+            64% { border-color: #ffea00; box-shadow: 0 0 10px #ffea00; }
+            80% { border-color: #ff7e00; box-shadow: 0 0 10px #ff7e00; }
+            100% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; }
         }
-        .rainbow-bg {
-            background: linear-gradient(270deg, #f09, #ff7e00, #ffea00, #0f0, #00f, #a0f, #f09);
-            background-size: 1400% 1400%;
-            animation: rainbow-bg-animation 20s ease infinite;
+        @keyframes cursor-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
-        .flat-button {
-            transition: transform 0.2s ease, background-color 0.2s ease;
+        .terminal {
+            border: 2px solid;
+            padding: 1.5rem;
+            background-color: rgba(0, 10, 0, 0.5);
+            animation: rainbow-glow 8s linear infinite alternate;
         }
-        .flat-button:hover:not(:disabled) {
-            transform: translateY(-4px);
+        #terminal-body {
+            height: 400px;
+            overflow-y: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
         }
-        .flat-button:disabled {
-            cursor: not-allowed;
-            opacity: 0.7;
+        #terminal-body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Opera */
         }
-        .section-title {
-            font-weight: 800; /* Extra bold for titles */
-            letter-spacing: -0.025em;
+        .prompt::before {
+            content: 'DH_OS> ';
+            color: #00ff41;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.5rem;
+            background-color: #fff;
+            animation: cursor-blink 1s step-end infinite, rainbow-glow 8s linear infinite alternate;
+            box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        .link {
+            text-decoration: underline;
+            color: #00ff41;
+            cursor: pointer;
+        }
+        .link:hover {
+            background-color: #00ff41;
+            color: #000;
+            text-shadow: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="p-4 md:p-8">
 
-    <!-- Header -->
-    <header class="bg-white fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-gray-900">DAKOTA HOURIE</a>
-            <nav class="hidden md:flex space-x-6 text-sm font-semibold tracking-wider">
-                <a href="#about" class="text-gray-500 hover:text-black">ABOUT</a>
-                <a href="#platform" class="text-gray-500 hover:text-black">PLATFORM</a>
-                <a href="#join" class="text-gray-500 hover:text-black">JOIN</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+    <div id="terminal" class="terminal w-full max-w-4xl mx-auto">
+        <div class="border-b-2 pb-2 mb-4 text-center" style="border-color: inherit;">
+            <p>DAKOTA HOURIE -- SYSTEM.FAILURE -- [SESSION_ID: 69420]</p>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
-            <a href="#about" class="block py-3 px-6 text-sm hover:bg-gray-50">ABOUT</a>
-            <a href="#platform" class="block py-3 px-6 text-sm hover:bg-gray-50">PLATFORM</a>
-            <a href="#join" class="block py-3 px-6 text-sm hover:bg-gray-50">JOIN</a>
+        <div id="terminal-body" class="text-lg md:text-xl break-words">
+            <!-- Content will be typed here by JavaScript -->
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="rainbow-bg pt-32 pb-24 md:pt-48 md:pb-40">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-5xl md:text-8xl font-extrabold text-white leading-tight tracking-tighter" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
-                    A VOTE FOR CHAOS
-                </h1>
-                <p class="mt-4 text-xl md:text-2xl text-white max-w-2xl mx-auto" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
-                    It's time for a candidate who is unqualified, unpredictable, and undeniably fabulous.
-                </p>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-xl mx-auto text-center mb-16">
-                    <h2 class="section-title text-4xl md:text-5xl text-gray-900">HI, IT'S ME.</h2>
-                    <p class="mt-4 text-lg text-gray-600">The political system is a joke, so why not vote for a clown?</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="bg-yellow-300 p-2 rounded-lg">
-                        <div class="bg-pink-300 h-80 rounded-md flex items-center justify-center">
-                           <span class="text-white text-3xl font-bold">This is a picture of me.</span>
-                        </div>
-                    </div>
-                    <div class="text-gray-700 space-y-4 text-lg">
-                        <p>I'm Dakota Hourie. My platform is simple: make everything more colorful and confusing. I believe in the power of glitter to solve most problems and the importance of a ridiculously long ballot.</p>
-                        <p>Running as an independent means I'm not tied to any party's boring color scheme. I'm aligned with the <span class="font-bold text-purple-600">Longest Ballot Committee</span> because their name is hilarious and their goal of letting citizens decide election laws is just chaotic enough to work.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Platform Section -->
-        <section id="platform" class="py-20 md:py-28 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <div class="max-w-xl mx-auto text-center mb-16">
-                    <h2 class="section-title text-4xl md:text-5xl text-gray-900">THE AGENDA.</h2>
-                    <p class="mt-4 text-lg text-gray-600">A 3-step plan to make politics bearable.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <!-- Step 1 -->
-                    <div class="bg-white p-8 rounded-lg">
-                        <div class="w-20 h-20 mx-auto bg-cyan-400 rounded-full flex items-center justify-center text-white text-3xl font-bold">1</div>
-                        <h3 class="text-2xl font-bold mt-6">More Color</h3>
-                        <p class="mt-2 text-gray-600">Mandate that all government buildings be painted in vibrant, clashing colors. Drab gray is hereby outlawed.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="bg-white p-8 rounded-lg">
-                        <div class="w-20 h-20 mx-auto bg-orange-400 rounded-full flex items-center justify-center text-white text-3xl font-bold">2</div>
-                        <h3 class="text-2xl font-bold mt-6">Less Sense</h3>
-                        <p class="mt-2 text-gray-600">Replace boring political debates with high-energy karaoke competitions. Let's see who can really deliver.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="bg-white p-8 rounded-lg">
-                        <div class="w-20 h-20 mx-auto bg-fuchsia-500 rounded-full flex items-center justify-center text-white text-3xl font-bold">3</div>
-                        <h3 class="text-2xl font-bold mt-6">Total Confusion</h3>
-                        <p class="mt-2 text-gray-600">Ensure every decision leads to maximum delightful chaos. If nobody understands what's happening, my job is done.</p>
-                    </div>
-                </div>
-
-                <!-- Gemini API Feature Section -->
-                <div class="mt-20 max-w-2xl mx-auto text-center">
-                    <h3 class="section-title text-3xl md:text-4xl text-gray-900">✨ Our Dynamic Platform ✨</h3>
-                    <p class="mt-4 text-lg text-gray-600">Our policies are generated by a highly advanced (and very confused) AI. What will I promise next? Who knows!</p>
-                    
-                    <div class="mt-6 bg-white p-6 rounded-lg min-h-[100px] flex items-center justify-center shadow-inner">
-                        <p id="promise-text" class="text-xl text-gray-700 font-semibold italic">"I promise to replace the national anthem with a sick synth-pop beat."</p>
-                    </div>
-                
-                    <button id="generate-promise-btn" class="mt-6 flat-button w-full sm:w-auto rainbow-bg text-white font-bold py-4 px-10 rounded-lg text-lg">
-                        GENERATE A NEW PROMISE
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Join Section -->
-        <section id="join" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-4xl md:text-5xl text-gray-900">GET INVOLVED.</h2>
-                <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">This glorious mess won't make itself. We need your questionable judgment.</p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="flat-button w-full sm:w-auto rainbow-bg text-white font-bold py-4 px-10 rounded-lg text-lg">
-                        DONATE TO THE GLITTER FUND
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="flat-button w-full sm:w-auto bg-gray-800 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-black">
-                        JOIN THE CHAOS CREW
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto py-10 px-6 text-center text-gray-400 text-sm">
-            <p>Paid for by someone. Probably.</p>
-            <p class="mt-2">&copy; 2025 Dakota Hourie's Campaign of Questionable Choices.</p>
+        <div id="input-line" class="prompt">
+            <span id="typed-text"></span><span class="cursor"></span>
         </div>
+    </div>
+    
+    <footer class="text-center mt-6 text-sm">
+        <p>// THIS ENTIRE CAMPAIGN IS A BUG, NOT A FEATURE //</p>
+        <p class="mt-2">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="link">[DONATE_TO_THE_VOID]</a>
+            <span class="mx-2">|</span>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="link">[JOIN_THE_GLITCH_MOB]</a>
+        </p>
     </footer>
 
     <script>
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const terminalBody = document.getElementById('terminal-body');
+        const typedTextElement = document.getElementById('typed-text');
+        const inputLine = document.getElementById('input-line');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        const asciiArt = [
+            "      .--.          ",
+            "     |o_o |         ",
+            "     |:_/ |         ",
+            "    //   \\ \\      ",
+            "   (|     | )       ",
+            "  /'\\_   _/`\\     ",
+            "  \\___)=(___/      "
+        ];
         
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+        const linesToType = [
+            { text: "BOOTING DH_OPERATING_SYSTEM...", speed: 50 },
+            { text: "KERNEL_PANIC_LEVEL: FABULOUS", speed: 50 },
+            { text: "...", speed: 500 },
+            { text: "LOADING CAMPAIGN_MANIFESTO.TXT", speed: 50 },
+            { text: "----------------------------------", speed: 20 },
+            { text: "CANDIDATE: Dakota Hourie", speed: 40 },
+            { text: "STATUS: Independent, Unpredictable", speed: 40 },
+            { text: "ALIGNMENT: Longest Ballot Committee (for the chaos)", speed: 40 },
+            { text: "PRIMARY_DIRECTIVE: INJECT_GLITTER.EXE", speed: 40 },
+            { text: "----------------------------------", speed: 20 },
+            { text: " ", speed: 10 },
+            { text: "RUNNING PLATFORM.SH:", speed: 50 },
+            { text: " ", speed: 10 },
+            { text: ">> 1. MANDATE RAINBOWS. All public infrastructure must adhere to a strict 7-color gradient. No exceptions.", speed: 30 },
+            { text: ">> 2. REPLACE DEBATES. All political discourse will now be settled via high-stakes vogueing battles.", speed: 30 },
+            { text: ">> 3. NATIONALIZE GLITTER. It is a strategic resource. It belongs to the people.", speed: 30 },
+            { text: ">> 4. APPOINT A GOOSE. A goose will be given a cabinet position with full veto power. For the drama.", speed: 30 },
+            { text: ">> 5. LEGALIZE CHAOS. My entire platform is to make things more confusing, beautiful, and weird.", speed: 30 },
+            { text: " ", speed: 10 },
+            { text: "LOADING ABOUT_ME.JPG...", speed: 50 },
+            { text: "ERROR: IMAGE CORRUPTED. LOADING ASCII FALLBACK...", speed: 50 },
+            ...asciiArt.map(line => ({ text: line, speed: 15 })),
+            { text: " ", speed: 10 },
+            { text: "SYSTEM READY. AWAITING YOUR POOR JUDGEMENT.", speed: 40 },
+        ];
 
-        // --- Gemini API Feature: Dynamic Promise Generator ---
-        const generateBtn = document.getElementById('generate-promise-btn');
-        const promiseText = document.getElementById('promise-text');
+        let lineIndex = 0;
 
-        generateBtn.addEventListener('click', async () => {
-            promiseText.textContent = 'Consulting the chaos oracles...';
-            generateBtn.disabled = true;
-            
-            const prompt = "Generate a single, funny, absurd, and chaotic campaign promise for a joke political candidate named Dakota Hourie who wants to make politics more fabulous and confusing. The promise should be a short sentence and enclosed in quotation marks.";
-
-            try {
-                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // API key is handled by the environment
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`API Error: ${response.statusText}`);
-                }
-
-                const result = await response.json();
-                
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    // Clean up the text, remove markdown quotes or leading/trailing whitespace
-                    promiseText.textContent = text.trim().replace(/^"|"$/g, ''); 
-                } else {
-                    // Handle cases where the response structure is unexpected
-                    throw new Error("Unexpected API response structure.");
-                }
-
-            } catch (error) {
-                console.error("Error generating promise:", error);
-                promiseText.textContent = 'The AI is on a glitter break. Try again later!';
-            } finally {
-                generateBtn.disabled = false;
+        function typeLine() {
+            if (lineIndex >= linesToType.length) {
+                // Optional: loop back to the start
+                // lineIndex = 0; 
+                // terminalBody.innerHTML = '';
+                // setTimeout(typeLine, 1000);
+                inputLine.style.display = 'none'; // Hide cursor line when done
+                const endPrompt = document.createElement('div');
+                endPrompt.className = 'prompt';
+                endPrompt.textContent = 'SESSION_TERMINATED';
+                terminalBody.appendChild(endPrompt);
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+                return;
             }
-        });
+
+            const currentLine = linesToType[lineIndex];
+            const lineElement = document.createElement('div');
+            
+            // Add prompt only to lines that aren't part of ASCII art or blank
+            if (!currentLine.text.trim().startsWith(' ') && currentLine.text.trim() !== '' && !currentLine.text.includes('.-')) {
+                lineElement.className = 'prompt';
+            }
+            
+            terminalBody.appendChild(lineElement);
+
+            let charIndex = 0;
+            const typingInterval = setInterval(() => {
+                if (charIndex < currentLine.text.length) {
+                    lineElement.textContent += currentLine.text[charIndex];
+                    charIndex++;
+                } else {
+                    clearInterval(typingInterval);
+                    lineIndex++;
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                    setTimeout(typeLine, currentLine.speed * 2); // Pause before next line
+                }
+            }, currentLine.speed);
+        }
+
+        // Initial blinking cursor before starting
+        setTimeout(() => {
+            inputLine.style.display = 'none';
+            typeLine();
+        }, 1000);
+
     </script>
 </body>
 </html>
