@@ -99,7 +99,7 @@
             <span class="mx-2">|</span>
             <a href="https://en.wikipedia.org/wiki/Electoral_reform_in_Canada" target="_blank" class="link">[WIKIPEDIA:ELECTORAL_REFORM]</a>
             <span class="mx-2">|</span>
-            <a href="https://www.elections.ca/" target="_blank" class="link">[READ_THE_MANUAL:ELECTIONS_CAN]</a>
+            <a href="https://www.elections.ca/content.aspx?section=res&dir=ces&document=index&lang=e" target="_blank" class="link">[READ_THE_MANUAL:ELECTIONS_CAN]</a>
         </p>
     </footer>
 
@@ -107,8 +107,6 @@
         const terminalBody = document.getElementById('terminal-body');
         const typedTextElement = document.getElementById('typed-text');
         const inputLine = document.getElementById('input-line');
-
-
 
 const asciiArt = [
             "      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
@@ -133,6 +131,27 @@ const asciiArt = [
         ];
         
         const linesToType = [
+            { text: "BOOTING DH_OPERATING_SYSTEM...", speed: 50 },
+            { text: "KERNEL_PANIC_LEVEL: NEUROSPICY", speed: 50 },
+            { text: "...", speed: 500 },
+            { text: "LOADING ELECTORAL_REFORM_MANIFESTO.TXT", speed: 50 },
+            { text: "----------------------------------", speed: 20 },
+            { text: "CANDIDATE: Dakota Hourie", speed: 40 },
+            { text: "STATUS: Independent, Unpredictable", speed: 40 },
+            { text: "AFFILIATION: Longest Ballot Committee (for the chaos)", speed: 40 },
+            { text: "PRIMARY_DIRECTIVE: GAY.AGENDA.EXE", speed: 40 },
+            { text: "----------------------------------", speed: 20 },
+            { text: " ", speed: 10 },
+            { text: "RUNNING SYSTEM_REFORM.SH:", speed: 50 },
+            { text: " ", speed: 10 },
+            { text: ">> 1. DECOMMISSION FIRST-PAST-THE-POST. 'Winner-take-all' is bad game design. We demand a patch for more balanced gameplay, like Proportional Representation.", speed: 30 },
+            { text: ">> 2. RECYCLE WASTED VOTES. Every ballot cast for a non-winning candidate will be shredded and composted into artisanal soil. Your dissent will at least grow a weird-looking carrot.", speed: 30 },
+            { text: ">> 3. MANDATORY RAINBOW COALITIONS. Governments must be formed by at least 3 parties, a local punk band, and a goose. Negotiations will be held in a ball pit.", speed: 30 },
+            { text: ">> 4. INITIATE OPERATION: LONGEST BALLOT. We will run so many candidates that the ballot will be 2 METERS LONG. Electoral Reform will be on everyones minds after this experience", speed: 30 },
+            { text: ">> 5. OVERLOAD THE SYSTEM. Our goal is to introduce so many choices the system crashes and must be rebooted with a better OS. One where every voice contributes to the beautiful, chaotic noise of democracy.", speed: 30 },
+            { text: " ", speed: 10 },
+            { text: "LOADING ABOUT_ME.JPG...", speed: 50 },
+            { text: "ERROR: IMAGE CORRUPTED. LOADING ASCII FALLBACK...", speed: 50 },
             ...asciiArt.map(line => ({ text: line, speed: 15 })),
             { text: " ", speed: 10 },
             { text: "SYSTEM READY. AWAITING YOUR POOR JUDGEMENT.", speed: 40 },
